@@ -1,0 +1,32 @@
+﻿@page
+@model ChatProject.Pages.Shared.LoginModel
+@{
+}
+<html>
+    <head>
+    meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splashside</title>
+    <link rel="stylesheet" href="~/css/Loginside.css" />
+    </head>
+    <body>
+        <h1 id=loginheader>
+            Velkommen til Login
+        </h1>
+        <form id="loginform" method="post">
+
+                <label> Brugernavn</label>
+                <input type="text" name="brugernavn" title="skriv dit brugernavn her">
+            
+                <label> Kodeord </label>
+                <input type="text" name="kodeord" title="skriv dit kodeord her">
+
+            <input type="submit">
+            <a id="nyBruger" href="/register"> Ny Bruger?</a>
+        </form>
+        <footer class="footer">
+            <div id="footcontainer">Kontakt: DummyEmail@gmail.com</div>
+        </footer>
+        
+    </body>
+</html>
