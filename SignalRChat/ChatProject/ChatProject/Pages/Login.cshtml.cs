@@ -16,6 +16,7 @@ namespace ChatProject.Pages.Shared
         public string kodeord { get; set; }
         public void OnPost()
         {
+            Console.WriteLine("cheese");
             // skriv kode der tester om det er en eksisterende bruger her.
         }
     }

@@ -3,14 +3,14 @@
     background-attachment: fixed;
     min-height: 100%;
     background-size: 100% 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 #loginheader {
     position: absolute;
     color: #276E96;
     left: 30%;
-    font-size: 4rem;
+    font-size: 4em;
 }
 
 .footer {
@@ -37,16 +37,21 @@
     width: 35%;
     height: 65%;
     background-color: #579BB8;
-    opacity: 40%;
+    opacity: 50%;
     border-radius: 14%;
+    z-index:3;
+}
+
+input:invalid {
+    box-shadow: 0 0 5px 3px red;
 }
 
 /* Style inputs */
-input[type=text], label {
+input[type=text], input[type=email], input[type=tel], input[type=password], label  {
     position: relative;
     left: 20%;
-    color: #276E96;
-    font-size: 2rem;
+    color: black;
+    font-size: 1.5rem;
     width: 60%;
     border-radius: 15px 15px 15px 15px;
     padding: 6px 10px;
@@ -54,11 +59,36 @@ input[type=text], label {
     margin: 4px 0;
 }
 
-/* Style the submit button */
-input[type=submit] {
+textarea{
     position: relative;
-    top: 45%;
-    right: 5%;
+    width: 60%;
+    height: 40%;
+    left: 20%;
+}
+button2 {
+    position: relative;
+    top:15%;
+    left: 20%;
+    color: #276EFF;
+    font-size: 1.5rem;
+    border-radius: 15px 15px 15px 15px;
+    padding: 6px 10px;
+    display: inline-block;
+    margin: 4px 0;
+}
+
+.bottomForm{
+    position: relative;
+    left:25%;
+}
+
+#loginBtn{
+    position: relative;
+    top: 40%;
+    left:55%;
+}
+/* Style the submit button */
+input[type=submit], button {
     width: 25%;
     background-color: #D9D9D9;
     border: none;
@@ -66,12 +96,13 @@ input[type=submit] {
     cursor: pointer;
     height: 10%;
     color: black;
+    display: inline-block;
 }
 
 #nyBruger {
-    position: relative;
-    top: 55%;
-    right: 20%;
+    position: absolute;
+    top: 87%;
+    left: 62%;
     color:white;
 }
 

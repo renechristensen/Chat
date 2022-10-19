@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="~/css/Loginside.css" />
     </head>
     <body>
-        <h1 id=loginheader>
+        <p id=loginheader>
             Velkommen til Login
-        </h1>
+        </p>
         <form id="loginform" method="post">
 
                 <label> Brugernavn</label>
@@ -20,8 +20,9 @@
             
                 <label> Kodeord </label>
                 <input type="text" name="kodeord" title="skriv dit kodeord her">
-
-            <input type="submit">
+        <div id="loginBtn">
+            <input type="submit" value="Log ind">
+        </div>
             <a id="nyBruger" href="/register"> Ny Bruger?</a>
         </form>
         <footer class="footer">
