@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2rLnF3vg1MnDpA+bf6fPeTBng+Xqhtx9zjL+qtY6FW0=",
+  "Hash": "HwEVBt5DhtfxfrQZuV+w3XRPUp7x6zickqPTH5xnCsE=",
   "Source": "ChatProject",
   "BasePath": "_content/ChatProject",
   "Mode": "Default",
@@ -68,6 +68,40 @@
       "OriginalItemSpec": "wwwroot\\css\\Loginside.css"
     },
     {
+      "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\css\\OversigtSelection.css",
+      "SourceId": "ChatProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\",
+      "BasePath": "_content/ChatProject",
+      "RelativePath": "css/OversigtSelection.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\OversigtSelection.css"
+    },
+    {
+      "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\css\\Oversigtsside.css",
+      "SourceId": "ChatProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\",
+      "BasePath": "_content/ChatProject",
+      "RelativePath": "css/Oversigtsside.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Oversigtsside.css"
+    },
+    {
       "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\css\\site.css",
       "SourceId": "ChatProject",
       "SourceType": "Discovered",
@@ -119,6 +153,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\Images\\ChatBagrund.png",
+      "SourceId": "ChatProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\",
+      "BasePath": "_content/ChatProject",
+      "RelativePath": "Images/ChatBagrund.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ChatBagrund.png"
+    },
+    {
       "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\Images\\Loginogregisterbackground.png",
       "SourceId": "ChatProject",
       "SourceType": "Discovered",
@@ -134,23 +185,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Loginogregisterbackground.png"
-    },
-    {
-      "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\Images\\Skærmbillede 2022-10-11 144559.png",
-      "SourceId": "ChatProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\",
-      "BasePath": "_content/ChatProject",
-      "RelativePath": "Images/Skærmbillede 2022-10-11 144559.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Skærmbillede 2022-10-11 144559.png"
     },
     {
       "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\Images\\Splashimage.jpg",

@@ -22,16 +22,14 @@ namespace ChatProject.Pages.Shared
         public IActionResult OnPost()
         {
            
-            Console.WriteLine("cheese");
             string message = $"SELECT EXISTS(SELECT * FROM Konto WHERE Brugernavn = '{brugernavn}' AND Kodeord = '{kodeord}')";
             if (ConMysql.CheckLogin(message))
-            { 
-                HttpContext.Session.SetString(Sessionsvariabler.SessionsBrugernavn, brugernavn);
+            {
+                fejlbesked = "login valideret";
+                HttpContext.Session.SetString("SessionsBrugernavn", brugernavn);
                 return Redirect("/Oversigtsside");
             }
-
-            string? s = HttpContext.Session.GetString(Sessionsvariabler.SessionsBrugernavn);
-            fejlbesked = $"Login fejlede {s} er ikke et korrekt brugernavn eller kodeordet er forkert";
+            fejlbesked = $"Login fejlede {brugernavn} er ikke et korrekt brugernavn eller kodeordet er forkert";
             return Redirect("/Login");
         }
     }

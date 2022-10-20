@@ -1,0 +1,49 @@
+﻿@page
+@model ChatProject.Pages.OversigtSelectionModel
+@{
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection</title>
+    <link rel="stylesheet" href="~/css/OversigtSelection.css" />
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="/Oversigtsside">Oversigt</a>
+        </div>
+        <div>
+            <p>@HttpContext.Session.GetString("SessionsBrugernavn")</p>
+        </div>
+        <div>
+            <a href="/LogUd">Log ud</a>
+        </div>
+    </nav>
+
+    <div id="PopOversigt">
+        <h1>Valgmuligheder</h1>
+            <div id="AliasHolder">
+                <label>Alias:</label>
+                <input @Bind="" type="text" name="Alias" value="@Model.Alias" title="skriv dit kodeord her">
+            </div>
+            <div id="ButtonHolder">
+                <form asp-page-handler="Tilbage" method="post">
+                    <button>Tilbage</button>
+                </form>
+                <form asp-page-handler="Tilchat" method="post">
+
+                    <button>Til Chat</button>
+                </form>
+            </div>
+    </div>
+
+
+    <footer class="footer">
+        <div id="footcontainer">Kontakt: DummyEmail@gmail.com</div>
+    </footer>
+
+</body>
+</html>

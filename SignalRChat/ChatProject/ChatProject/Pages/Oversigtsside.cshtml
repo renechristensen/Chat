@@ -2,3 +2,47 @@
 @model ChatProject.Pages.OversigtssideModel
 @{
 }
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splashside</title>
+    <link rel="stylesheet" href="~/css/Oversigtsside.css" />
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="/Oversigtsside">Oversigt</a>
+        </div>
+        <div>
+            <p>@HttpContext.Session.GetString("SessionsBrugernavn")</p>
+        </div>
+        <div>
+            <a href="/LogUd">Log ud</a>
+        </div>
+    </nav>
+    <div id="ChatOversigt">
+
+        <form asp-page-handler="view" method="post">
+            <button class="btn btn-default">Chat1</button>
+            <input type="hidden" name="id" value="1" />
+        </form>
+        <form asp-page-handler="view" method="post">
+            <button class="btn btn-default">Chat2</button>
+            <input type="hidden" name="id" value="2" />
+        </form>
+        <form asp-page-handler="view" method="post">
+            <button class="btn btn-default">Chat3</button>
+            <input type="hidden" name="id" value="3" />
+        </form>
+        <form asp-page-handler="view" method="post">
+            <button class="btn btn-default">Chat4</button>
+            <input type="hidden" name="id" value="4" />
+        </form>
+    </div>
+    <footer class="footer">
+        <div id="footcontainer">Kontakt: DummyEmail@gmail.com</div>
+    </footer>
+
+</body>
+</html>

@@ -9,7 +9,6 @@ namespace ChatProject.Pages
     {
         public IActionResult OnGet()
         {
-            Console.WriteLine(HttpContext.Session.GetString("SessionsBrugernavn"));
             if(String.IsNullOrWhiteSpace(HttpContext.Session.GetString("SessionsBrugernavn")))
             {
                 return Redirect("/Login");
@@ -18,6 +17,13 @@ namespace ChatProject.Pages
             {
                 return Page();
             }
+        }
+
+        public IActionResult OnPostView(string id)
+        {
+            Console.WriteLine($"Du har valgt id nr {id} ");
+            HttpContext.Session.SetString("ChatID", id);
+            return Redirect("/OversigtSelection");
         }
     }
 }
