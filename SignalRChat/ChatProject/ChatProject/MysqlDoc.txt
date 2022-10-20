@@ -9,7 +9,7 @@
 
 CREATE TABLE Bopæl(
 	BopælID INT AUTO_INCREMENT PRIMARY KEY,
-    Addresse VARCHAR(255) NOT NULL,
+    Addresse VARCHAR(255),
     Postnummer VARCHAR(4),
     Byen VARCHAR(255),
     KundeID INT NOT NULL, 

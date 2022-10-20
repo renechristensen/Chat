@@ -13,16 +13,16 @@
         <h1 id=loginheader>
             Velkommen til Register
         </h1>
-        <form id="loginform" method="post" onsubmit(validatePassword())>
+        <form id="loginform" method="post">
             <div id="formpage1">
                 <label> Navn</label>
-                <input type="text" name="navn" title="skriv dit fornavn og mellemnavn her" >
+                <input type="text" name="navn" title="skriv dit fornavn og mellemnavn her" required>
                 <label> Efternavn </label>
-                <input type="text" name="efternavn" title="skriv dit efternavn her" >
+            <input type="text" name="efternavn" title="skriv dit efternavn her" required>
                 <label> Email</label>
-                <input type="email" name="email" title="skriv din email her" >
+            <input type="email" name="email" title="skriv din email her" required>
                 <label> Telefonnummer </label>
-                <input type="tel" name="telefonnummer" title="skriv dit telefonnummer her" pattern="[0-9]{8}" >
+            <input type="tel" name="telefonnummer" title="skriv dit telefonnummer her" pattern="[0-9]{8}" required>
                 <div class="bottomForm">
                     <button type="button" onclick="toggleFormpage('formpage1', 'formpage2')">næste</button>
                 </div>
@@ -61,5 +61,5 @@
         </footer>
         
     </body>
-    <script src="~/js/Loginside.js"></script>
+    <script src="~/js/Loginside.js"></script> 
 </html>

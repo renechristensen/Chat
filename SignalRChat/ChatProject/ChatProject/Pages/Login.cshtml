@@ -14,16 +14,19 @@
             Velkommen til Login
         </p>
         <form id="loginform" method="post">
-
-                <label> Brugernavn</label>
-                <input type="text" name="brugernavn" title="skriv dit brugernavn her">
+            <label> Brugernavn</label>
+            <input type="text" name="brugernavn" title="skriv dit brugernavn her">     
+            <label> Kodeord </label>
+            <input type="text" name="kodeord" title="skriv dit kodeord her">
+            <p style="position: relative; left:20%; color: red;">
+                @Model.fejlbesked
+            </p>
             
-                <label> Kodeord </label>
-                <input type="text" name="kodeord" title="skriv dit kodeord her">
-        <div id="loginBtn">
-            <input type="submit" value="Log ind">
-        </div>
-            <a id="nyBruger" href="/register"> Ny Bruger?</a>
+            <div id="loginBtn">
+                <input type="submit" value="Log ind">
+                <a id="nyBruger" href="/register"> Ny Bruger?</a>
+             </div>
+             
         </form>
         <footer class="footer">
             <div id="footcontainer">Kontakt: DummyEmail@gmail.com</div>

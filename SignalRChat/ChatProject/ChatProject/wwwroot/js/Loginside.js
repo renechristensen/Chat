@@ -7,17 +7,19 @@
 
 
 function validatePassword() {
-    var kodeord = document.getElementById("kodeord");
-    var gkodeord = document.getElementById("gkodeord");
-    console.log(kodeord.value);
-    console.log(gkodeord.value);
-    if (kodeord.value !== gkodeord.value) {
-        gkodeord.setCustomValidity("Det er ikke det samme kodeord!!");
+    var kodeordElem = document.getElementById("kodeord");
+    var gkodeordElem = document.getElementById("gkodeord");
+    var kodeord = kodeordElem.value;
+    var gkodeord = gkodeordElem.value;
+    console.log(kodeord);
+    console.log(gkodeord);
+    if (kodeord != gkodeord) {
+        gkodeordElem.setCustomValidity("Det er ikke det samme kodeord!!");
         return false;
     } else {
+        gkodeordElem.setCustomValidity("");
         return true;
     }
 }
 
 gkodeord.onchange = validatePassword;
-gkodeord.onkeyup = validatePassword;
