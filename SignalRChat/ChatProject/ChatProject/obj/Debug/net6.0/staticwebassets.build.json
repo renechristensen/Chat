@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HwEVBt5DhtfxfrQZuV+w3XRPUp7x6zickqPTH5xnCsE=",
+  "Hash": "zqghk8VEVssJhhgvutB1bf3blFn9IfqnaiX3QcwJPI8=",
   "Source": "ChatProject",
   "BasePath": "_content/ChatProject",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ChatProject.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\css\\Chatoversigtsside.css",
+      "SourceId": "ChatProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\",
+      "BasePath": "_content/ChatProject",
+      "RelativePath": "css/Chatoversigtsside.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Chatoversigtsside.css"
     },
     {
       "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\css\\Loginside.css",
@@ -270,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Loginside.js"
+    },
+    {
+      "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\js\\OversigtSelectionjs.js",
+      "SourceId": "ChatProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\",
+      "BasePath": "_content/ChatProject",
+      "RelativePath": "js/OversigtSelectionjs.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\OversigtSelectionjs.js"
     },
     {
       "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",

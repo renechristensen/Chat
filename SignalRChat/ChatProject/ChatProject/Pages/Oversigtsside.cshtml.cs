@@ -23,7 +23,7 @@ namespace ChatProject.Pages
         {
             Console.WriteLine($"Du har valgt id nr {id} ");
             HttpContext.Session.SetString("ChatID", id);
-            return Redirect("/OversigtSelection");
+            return Redirect("/Chatside");
         }
     }
 }

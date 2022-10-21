@@ -20,16 +20,18 @@ namespace ChatProject.Pages
 
         [BindProperty]
         public string? Alias { get; set; }
+        [BindProperty]
+        public string Alias2 { get; set; } = "";
 
         public IActionResult OnPostTilbage()
         {
-            Console.WriteLine(Alias);
             return Redirect("/Oversigtsside");
         }
 
         public IActionResult OnPostTilchat()
         {
-            Console.WriteLine("TILCHAT");
+            HttpContext.Session.SetString("Alias", Alias2);
+            Console.WriteLine(Alias2);
             return Redirect("/Oversigtsside");
         }
     }
