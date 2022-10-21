@@ -17,7 +17,7 @@ namespace ChatProject.Classerne
             {
                 MySqlCommand Cmd = new(Message, Connect);
                 MySqlDataReader reader = Cmd.ExecuteReader();
-            } catch(Exception e)
+            } catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -25,6 +25,7 @@ namespace ChatProject.Classerne
         }
         public static int GetID(string query)
         {
+            Console.WriteLine(query);
             int ID = -1;
             Connect.Open();
             try
@@ -34,7 +35,7 @@ namespace ChatProject.Classerne
 
                 while (reader.Read())
                 {
-                    ID=Convert.ToInt32(reader.GetString(0));
+                    ID = Convert.ToInt32(reader.GetString(0));
                 }
             }
             catch (Exception e)
@@ -57,7 +58,7 @@ namespace ChatProject.Classerne
                 while (reader.Read())
                 {
                     Console.WriteLine(reader.GetString(0));
-                    if(Convert.ToInt32(reader.GetString(0)) == 1)
+                    if (Convert.ToInt32(reader.GetString(0)) == 1)
                     {
                         Connect.Close();
                         return true;
@@ -72,5 +73,32 @@ namespace ChatProject.Classerne
             Connect.Close();
             return false;
         }
+
+        public static List<Besked> GetBeskeder(string Message){
+            List<Besked> beskeder = new List<Besked>();
+            Connect.Open();
+            try
+            {
+                MySqlCommand Cmd = new(Message, Connect);
+                MySqlDataReader reader = Cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Besked besked = new Besked();
+                    besked.BeskedID = Convert.ToInt32(reader.GetString(0));
+                    besked.Text = reader.GetString(1);
+                    besked.ChatrumID = Convert.ToInt32(reader.GetString(2));
+                    besked.KontoID = Convert.ToInt32((reader.GetString(3)));
+                    beskeder.Add(besked);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Connect.Close();
+            return beskeder;
+        }
+
     }
 }

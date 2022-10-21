@@ -38,3 +38,12 @@ CREATE TABLE Besked(
     FOREIGN KEY(ChatrumID) REFERENCES Chatrum(ChatrumID),
     FOREIGN KEY(KontoID) REFERENCES Konto(KontoID)
 );
+
+INSERT INTO Chatrum(Navn)
+VALUES('Chatrum1');
+INSERT INTO Chatrum(Navn)
+VALUES('Chatrum2');
+INSERT INTO Chatrum(Navn)
+VALUES('Chatrum3');
+INSERT INTO Chatrum(Navn)
+VALUES('Chatrum4');

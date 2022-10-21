@@ -25,6 +25,8 @@ namespace ChatProject.Pages.Shared
             string message = $"SELECT EXISTS(SELECT * FROM Konto WHERE Brugernavn = '{brugernavn}' AND Kodeord = '{kodeord}')";
             if (ConMysql.CheckLogin(message))
             {
+                int kontoID = ConMysql.GetID($"SELECT * FROM Konto WHERE Brugernavn = '{brugernavn}' AND Kodeord = '{kodeord}';");
+                HttpContext.Session.SetString("KontoID", Convert.ToString(kontoID));
                 fejlbesked = "login valideret";
                 HttpContext.Session.SetString("SessionsBrugernavn", brugernavn);
                 return Redirect("/Oversigtsside");

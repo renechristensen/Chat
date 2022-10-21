@@ -54,7 +54,7 @@ nav {
     scrollbar-width: none;
     position: absolute;
     left: 33%;
-    top: 20%;
+    top: 10%;
     width: 35%;
     height: 65%;
     background-color: #579BB8;
@@ -63,19 +63,70 @@ nav {
     z-index: 3;
 }
 
-/* Style inputs */
-button {
+.ChatBeskedContainer {
     position: relative;
-    top: 8%;
-    left: 12.5%;
+    left: 15%;
+    width: 70%;
+    background-color: aliceblue;
+    opacity: 65%;
+    border-radius: 12%;
+    margin-top: 10px;
+
+}
+.ChatBesked {
+    position: relative;
+    margin: 5px;
+}
+
+#ReplyContainter {
+    position: absolute;
+    left: 33%;
+    top: 80%;
+    width: 35%;
+    height: 10%;
+    background-color: #579BB8;
+    opacity: 50%;
+    border-radius: 22px 22px 22px 22px;
+    z-index: 3;
+}
+
+#Replyer{
+    position: relative;
+    left: 15%;
+    width: 100%;
+    top: 22%;
+}
+
+input[type=text] {
+    position: relative;
     color: black;
     font-size: 1.5rem;
-    width: 75%;
     border-radius: 15px 15px 15px 15px;
-    padding: 8px 10px;
-    display: inline-block;
-    margin: 22px 0;
+    margin: 4px 0;
+    padding: 6px 10px;
+    width: 65%;
 }
+input[type=submit] {
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 15px 15px 15px 15px;
+    padding: 6px 10px;
+    margin: 4px 0;
+}
+
+/* Style inputs */
+button {
+        position: relative;
+        top: 8%;
+        left: 12.5%;
+        color: black;
+        font-size: 1.5rem;
+        width: 75%;
+        border-radius: 15px 15px 15px 15px;
+        padding: 8px 10px;
+        display: inline-block;
+        margin: 22px 0;
+    }
 
 .footer {
     position: absolute;
