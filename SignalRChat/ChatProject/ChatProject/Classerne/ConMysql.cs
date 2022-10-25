@@ -12,14 +12,17 @@ namespace ChatProject.Classerne
         public static void SendSqlQuery(string Message)
         {
 
-            Connect.Open();
+            if (Connect.State != ConnectionState.Open)
+            {
+                Connect.Open();
+            }
             try
             {
                 MySqlCommand Cmd = new(Message, Connect);
                 MySqlDataReader reader = Cmd.ExecuteReader();
             } catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("SendSqlQuerty: " + e.Message);
             }
             Connect.Close();
         }
@@ -27,7 +30,10 @@ namespace ChatProject.Classerne
         {
             //Console.WriteLine(query);
             int ID = -1;
-            Connect.Open();
+            if (Connect.State != ConnectionState.Open)
+            {
+                Connect.Open();
+            }
             try
             {
                 MySqlCommand Cmd = new(query, Connect);
@@ -40,7 +46,7 @@ namespace ChatProject.Classerne
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("GetID: " + e.Message);
             }
             Connect.Close();
             return ID;
@@ -70,7 +76,7 @@ namespace ChatProject.Classerne
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("CheckLogin: " + e.Message);
                 Connect.Close();
             }
             Connect.Close();
@@ -79,7 +85,10 @@ namespace ChatProject.Classerne
 
         public static List<Besked> GetBeskeder(string Message){
             List<Besked> beskeder = new List<Besked>();
-            Connect.Open();
+            if (Connect.State != ConnectionState.Open)
+            {
+                Connect.Open();
+            }
             try
             {
                 MySqlCommand Cmd = new(Message, Connect);
@@ -97,7 +106,7 @@ namespace ChatProject.Classerne
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("GetBeskeder: " + e.Message);
             }
             Connect.Close();
             return beskeder;
@@ -106,23 +115,28 @@ namespace ChatProject.Classerne
         public static Konto GetKonto(string Message)
         {
             Konto konto = new();
-            Connect.Open();
+            if (Connect.State != ConnectionState.Open)
+            {
+                Connect.Open();
+            }
             try
             {
                 MySqlCommand Cmd = new(Message, Connect);
                 MySqlDataReader reader = Cmd.ExecuteReader();
-
+                
                 while (reader.Read())
                 {
                     konto.KontoID = Convert.ToInt32(reader.GetString(0));
-                    konto.Brugernavn = reader.GetString(1);
-                    konto.Alias = reader.GetString(2);
-                    konto.KundeID = Convert.ToInt32((reader.GetString(3)));
+                    konto.kodeord = reader.GetString(1);
+                    konto.Brugernavn = reader.GetString(2);
+                    konto.Alias = reader.GetString(3);
+                    konto.KundeID = Convert.ToInt32(reader.GetString(4));
                 }
+                
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("GetKonto: " +e.Message);
             }
             Connect.Close();
             return konto;

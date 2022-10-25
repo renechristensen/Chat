@@ -3,7 +3,7 @@
 @model ChatProject.Pages.ChatsideModel
 @{
 }
-
+<!doctype html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
             <a href="/Oversigtsside">Oversigt</a>
         </div>
         <div>
-            <p>@HttpContext.Session.GetString("SessionsBrugernavn")</p>
+            <p id="SessionUser">@HttpContext.Session.GetString("SessionsBrugernavn")</p>
         </div>
         <div>
             <a href="/LogUd">Log ud</a>
@@ -32,13 +32,48 @@
     <div id="ReplyContainter">
         <div id="Replyer">
             <form method="post" id="ReplyForm" style="float:left; width:100%;">
-                <input type="text" pattern="{1,255}" name="besked">
-                <input type="submit" value="Svar">
+                <input type="text" id="ReplyInput" maxlength="255" name="besked">
+                <input type="submit" id="ReplyBtn" value="Svar">
             </form>
         </div>
     </div>
     <footer class="footer">
         <div id="footcontainer">Kontakt: DummyEmail@gmail.com</div>
     </footer>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script> 
+    <!--
+    <script>
+        "use strict";
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+
+        document.getElementById("ReplyBtn").disabled = true;
+
+        connection.on("ReceiveMessage", function (user, message) {
+            new Notification("Ny besked fra " + user);
+            var container = document.createElement("div");
+            container.className = "ChatBeskedContainer";
+            var beskeden = document.createElement("p");
+            beskeden.className = "ChatBesked";
+            beskeden.textContent = "" + user + "<br><br> " + message;
+            container.appendChild(beskeden);
+            document.getElementById("ChatBeskedOversigt").appendChild(container);
+        });
+
+        connection.start().then(function () {
+            document.getElementById("ReplyBtn").disabled = false;
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        document.getElementById("ReplyBtn").addEventListener("click", function (event) {
+            var user = ""+ @( Model.HttpContext.Session.GetString("SessionsBrugernavn"));
+            connection.invoke("SendMessage", "BANAN" , "random message").catch(function (err) {
+                return console.error(err.toString());
+            });
+        });
+    </script>
+    -->
 </body>
 </html>

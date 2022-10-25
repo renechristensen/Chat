@@ -4,6 +4,7 @@
 }
 @model ChatProject.Pages.IndexModel
 
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -20,5 +21,42 @@
             </a>
     <p id="loginText">Login</p>
     </body>
+<button onclick="askNotificationPermission()" id="enable">Enable notifications</button>
+
+    <script>
+    function askNotificationPermission() {
+        // function to actually ask the permissions
+        function handlePermission(permission) {
+            // set the button to shown or hidden, depending on what the user answers
+            notificationBtn.style.display =
+                Notification.permission === 'granted' ? 'none' : 'block';
+        }
+
+        // Let's check if the browser supports notifications
+        if (!('Notification' in window)) {
+            console.log("This browser does not support notifications.");
+        } else if (checkNotificationPromise()) {
+            Notification.requestPermission().then((permission) => {
+                handlePermission(permission);
+            });
+        } else {
+            Notification.requestPermission((permission) => {
+                handlePermission(permission);
+            });
+        }
+    }
+    function checkNotificationPromise() {
+        try {
+            Notification.requestPermission().then();
+        } catch (e) {
+            console.log("request Permission false");
+            return false;
+        }
+        console.log("request Permission true");
+
+        return true;
+    }
+
+    </script>
 </html>
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9hob6ZbOFb11W0ISv/NQuaPipw3nMtz5V5Mwg2FsN+g=",
+  "Hash": "zqghk8VEVssJhhgvutB1bf3blFn9IfqnaiX3QcwJPI8=",
   "Source": "ChatProject",
   "BasePath": "_content/ChatProject",
   "Mode": "Default",
@@ -270,23 +270,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\chat.js"
-    },
-    {
-      "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\js\\Chatside.js",
-      "SourceId": "ChatProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\",
-      "BasePath": "_content/ChatProject",
-      "RelativePath": "js/Chatside.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\Chatside.js"
     },
     {
       "Identity": "C:\\Users\\rene661f\\Desktop\\Projektmappe\\Chatsystem\\Gitproject\\SignalRChat\\ChatProject\\ChatProject\\wwwroot\\js\\Loginside.js",

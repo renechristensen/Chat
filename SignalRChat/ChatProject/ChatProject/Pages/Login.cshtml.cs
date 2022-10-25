@@ -27,7 +27,7 @@ namespace ChatProject.Pages.Shared
             {
                 int kontoID = ConMysql.GetID($"SELECT * FROM Konto WHERE Brugernavn = '{brugernavn}' AND Kodeord = '{kodeord}';");
                 HttpContext.Session.SetString("KontoID", Convert.ToString(kontoID));
-                fejlbesked = "login valideret";
+                fejlbesked = "";
                 HttpContext.Session.SetString("SessionsBrugernavn", brugernavn);
                 return Redirect("/Oversigtsside");
             }

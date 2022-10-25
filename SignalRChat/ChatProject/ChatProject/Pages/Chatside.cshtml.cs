@@ -12,7 +12,8 @@ namespace ChatProject.Pages
         public List<Besked> beskederne { get; set; } = new();
         [BindProperty]
         public Dictionary<string, string> kontoerne { get; set; } = new();
-        SRClient client = new SRClient();
+
+        public static SRClient client = new SRClient();
         public IActionResult OnGet()
         {
             client.connection.On<string, string>("ReceiveMessage", (user, message) =>
@@ -33,9 +34,7 @@ namespace ChatProject.Pages
 
         public List<Besked> GetBeskeder()
         {
-            string message = $"SELECT * FROM Besked WHERE ChatrumID = " +
-                $"{Convert.ToInt32(HttpContext.Session.GetString("ChatrumID"))} ORDER BY BeskedID Limit 50;";
-            //Console.WriteLine(message);
+            string message = $"SELECT * FROM (Select * FROM Besked WHERE ChatrumID = {Convert.ToInt32(HttpContext.Session.GetString("ChatrumID"))} ORDER BY BeskedID Desc Limit 50) AS sub ORDER BY BeskedID Asc;";
             beskederne = ConMysql.GetBeskeder(message);
             foreach(Besked besked in beskederne)
             {
@@ -44,13 +43,13 @@ namespace ChatProject.Pages
                 if (!kontoerne.ContainsKey(beskedIDD)) {
                     message = $"SELECT * FROM Konto WHERE KontoID = {besked.KontoID};";
                     Konto konto = ConMysql.GetKonto(message);
-                    //onsole.WriteLine(konto.KontoID);
                     kontoerne.Add(beskedIDD, konto.Alias);
                 }
             }
             return beskederne;
         }
 
+        // Message typed in the reply box
         [BindProperty]
         public string besked { get; set; } = "";
         

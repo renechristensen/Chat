@@ -4,7 +4,6 @@ namespace ChatProject.Classerne
 
     public class SRClient
     {
-        //public static HubConnection connection =new HubConnectionBuilder().WithUrl("/chatHub").Build();
         public HubConnection connection;
         public SRClient()
         {
