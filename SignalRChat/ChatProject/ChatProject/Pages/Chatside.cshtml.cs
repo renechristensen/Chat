@@ -1,14 +1,25 @@
 using ChatProject.Classerne;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR.Client;
+
 
 namespace ChatProject.Pages
 {
     public class ChatsideModel : PageModel
     {
-        public List<Besked> beskederne = new();
+        [BindProperty]
+        public List<Besked> beskederne { get; set; } = new();
+        [BindProperty]
+        public Dictionary<string, string> kontoerne { get; set; } = new();
+        SRClient client = new SRClient();
         public IActionResult OnGet()
         {
+            client.connection.On<string, string>("ReceiveMessage", (user, message) =>
+            {
+                Console.WriteLine(message);
+            });
+
             GetBeskeder();
             if (String.IsNullOrWhiteSpace(HttpContext.Session.GetString("SessionsBrugernavn")))
             {
@@ -22,27 +33,43 @@ namespace ChatProject.Pages
 
         public List<Besked> GetBeskeder()
         {
-            string message = $"SELECT * FROM Besked WHERE ChatrumID = {Convert.ToInt32(HttpContext.Session.GetString("ChatrumID"))}ORDER BY BeskedID Limit 2;";
-            Console.WriteLine(message);
+            string message = $"SELECT * FROM Besked WHERE ChatrumID = " +
+                $"{Convert.ToInt32(HttpContext.Session.GetString("ChatrumID"))} ORDER BY BeskedID Limit 50;";
+            //Console.WriteLine(message);
             beskederne = ConMysql.GetBeskeder(message);
             foreach(Besked besked in beskederne)
             {
-                Console.WriteLine(besked.Text);
+                string beskedIDD = Convert.ToString(besked.BeskedID);
+
+                if (!kontoerne.ContainsKey(beskedIDD)) {
+                    message = $"SELECT * FROM Konto WHERE KontoID = {besked.KontoID};";
+                    Konto konto = ConMysql.GetKonto(message);
+                    //onsole.WriteLine(konto.KontoID);
+                    kontoerne.Add(beskedIDD, konto.Alias);
+                }
             }
             return beskederne;
         }
+
         [BindProperty]
         public string besked { get; set; } = "";
-
+        
+        public void Send()
+        {
+             client.connection.InvokeAsync("SendMessage", "username", "Besked");
+        }
         public void OnPost()
         {
-           
-            int ChatrumID = Convert.ToInt32(HttpContext.Session.GetString("ChatrumID"));
-            int KontoID = Convert.ToInt32(HttpContext.Session.GetString("KontoID"));
-            string message = $"INSERT INTO Besked(Text, ChatrumID, KontoID) VALUES('{besked}', {HttpContext.Session.GetString("ChatrumID")}, {HttpContext.Session.GetString("KontoID")});";
-            Console.WriteLine(message);
-            ConMysql.SendSqlQuery(message);
-            GetBeskeder();
+            if (besked != null)
+            {
+                int ChatrumID = Convert.ToInt32(HttpContext.Session.GetString("ChatrumID"));
+                int KontoID = Convert.ToInt32(HttpContext.Session.GetString("KontoID"));
+                Send();
+                string message = $"INSERT INTO Besked(Text, ChatrumID, KontoID) VALUES('{besked}', {HttpContext.Session.GetString("ChatrumID")}, {HttpContext.Session.GetString("KontoID")});";
+                //Console.WriteLine(message);
+                ConMysql.SendSqlQuery(message);
+                GetBeskeder();
+            }
         }
     }
 }

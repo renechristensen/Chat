@@ -76,6 +76,8 @@ nav {
 .ChatBesked {
     position: relative;
     margin: 5px;
+    inline-size: 100%;
+    word-break: break-all;
 }
 
 #ReplyContainter {

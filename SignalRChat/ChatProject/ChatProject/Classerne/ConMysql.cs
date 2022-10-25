@@ -25,7 +25,7 @@ namespace ChatProject.Classerne
         }
         public static int GetID(string query)
         {
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
             int ID = -1;
             Connect.Open();
             try
@@ -48,8 +48,11 @@ namespace ChatProject.Classerne
 
         public static bool CheckLogin(string Message)
         {
-
-            Connect.Open();
+            if (Connect.State != ConnectionState.Open)
+            {
+                Connect.Open();
+            }
+            
             try
             {
                 MySqlCommand Cmd = new(Message, Connect);
@@ -57,7 +60,7 @@ namespace ChatProject.Classerne
 
                 while (reader.Read())
                 {
-                    Console.WriteLine(reader.GetString(0));
+                    //Console.WriteLine(reader.GetString(0));
                     if (Convert.ToInt32(reader.GetString(0)) == 1)
                     {
                         Connect.Close();
@@ -100,5 +103,29 @@ namespace ChatProject.Classerne
             return beskeder;
         }
 
+        public static Konto GetKonto(string Message)
+        {
+            Konto konto = new();
+            Connect.Open();
+            try
+            {
+                MySqlCommand Cmd = new(Message, Connect);
+                MySqlDataReader reader = Cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    konto.KontoID = Convert.ToInt32(reader.GetString(0));
+                    konto.Brugernavn = reader.GetString(1);
+                    konto.Alias = reader.GetString(2);
+                    konto.KundeID = Convert.ToInt32((reader.GetString(3)));
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Connect.Close();
+            return konto;
+        }
     }
 }
