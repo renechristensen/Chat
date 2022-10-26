@@ -29,7 +29,8 @@ connection.start().then(function () {
 document.getElementById("ReplyBtn").addEventListener("click", function (event) {
     var username = document.getElementById("SessionUser").textContent;
     var message = document.getElementById("ReplyInput").value;
-    connection.invoke("SendMessage", username, message).catch(function (err) {
+    var chatrumID = document.getElementById("chatrumID").textContent;
+    connection.invoke("SendMessage", username, message, chatrumID).catch(function (err) {
         return console.error(err.toString());
     });
 });

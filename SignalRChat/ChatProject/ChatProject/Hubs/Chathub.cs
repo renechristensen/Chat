@@ -8,19 +8,15 @@ namespace ChatProject.Hubs
         public async Task SendMessage(string user, string message, string groupName)
         {
             //await Clients.All.SendAsync("ReceiveMessage", user, message);
-            await Clients.Group(groupName).SendAsync("ReceiveMessage", user, message);
-
+            //await Clients.Group(groupName).SendAsync("ReceiveMessage", user, message);
+            await Clients.GroupExcept(groupName, Context.ConnectionId).SendAsync("ReceiveMessage", user, message);
         }
 
         public async Task AddToGroup(string user, string message, string groupName)
         {
-            //RemoveFromGroup("1");
-            //RemoveFromGroup("2");
-            //RemoveFromGroup("3");
-            //RemoveFromGroup("4");
             await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
 
-            await Clients.Group(groupName).SendAsync("ReceiveMessage", $"{user} har sluttet sig til chat{groupName}.", message);
+            //await Clients.Group(groupName).SendAsync("ReceiveMessage", $"{user} har sluttet sig til chat{groupName}.", message);
         }
 
         public async Task RemoveFromGroup(string groupName)

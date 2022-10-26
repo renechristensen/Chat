@@ -32,7 +32,7 @@ namespace ChatProject.Pages
         {
             HttpContext.Session.SetString("Alias", Alias2);
             Console.WriteLine(Alias2);
-            return Redirect("/Oversigtsside");
+            return Redirect("/Chatside");
         }
     }
 }
